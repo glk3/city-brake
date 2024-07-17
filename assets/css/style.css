@@ -1,0 +1,61 @@
+
+h1 {
+    text-align: center;
+    font-size: 30px;
+}
+
+.flex {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-around;
+}
+
+.germany {
+    margin: 10px;
+    text-align: center;
+    font-size: 20px;
+    width: 200px;
+    height: 100px;
+    border-radius: 8px;
+    background-color: aquamarine;
+}
+
+.france {
+    margin: 10px;
+    width: 200px;
+    height: 100px;
+    border-radius: 8px;
+    background-color: rgb(141, 104, 104);
+}
+
+.germany {
+    margin: 10px;
+    width: 200px;
+    height: 100px;
+    border-radius: 8px;
+    background-color: rgb(134, 173, 233);
+}
+
+.italy {
+    margin: 10px;
+    width: 200px;
+    height: 100px;
+    border-radius: 8px;
+    background-color: rgb(31, 99, 57);
+}
+
+.england {
+    margin: 10px;
+    width: 200px;
+    height: 100px;
+    border-radius: 8px;
+    background-color: rgb(38, 32, 227);
+}
+
+.australia {
+    margin: 10px;
+    width: 200px;
+    height: 100px;
+    border-radius: 8px;
+    background-color: rgb(161, 195, 234);
+}
