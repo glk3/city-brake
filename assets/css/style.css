@@ -29,7 +29,7 @@ h1 {
     height: 150px;
     color: rgb(224, 165, 17);
     border-radius: 8px;
-    background: url(../images/france2.svg.png);
+    background: url(../images/france_flag.png);
 }
 
 #italy {
@@ -40,7 +40,7 @@ h1 {
     height: 150px;
     color: rgb(224, 165, 17);
     border-radius: 8px;
-    background: url(../images/italy1.png);
+    background: url(../images/italy_flag.png);
 }
 
 #england {
@@ -51,7 +51,7 @@ h1 {
     height: 150px;
     color: rgb(255, 184, 3);
     border-radius: 8px;
-    background: url(../images/uk2.jpg);
+    background: url(../images/uk_flag.jpg);
 }
 
 #australia {
@@ -63,5 +63,5 @@ h1 {
     color: rgb(255, 184, 3);
     margin-left: 45px;
     border-radius: 8px;
-    background: url(../images/Flag-Australia1.jpg);
+    background: url(../images/australia_flag.jpg);
 }
