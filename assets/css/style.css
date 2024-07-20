@@ -21,8 +21,9 @@ h1 {
     background: url(../images/germany_flag.png);
 }
 
-p {
+.ger {
     margin: 10px;
+    border-radius: 5px;
     background-color: rgba(235, 243, 243, 0.803);
 }
 
@@ -37,6 +38,12 @@ p {
     background: url(../images/france_flag.png);
 }
 
+.fr {
+    margin: 10px;
+    border-radius: 5px;
+    background-color: rgba(235, 243, 243, 0.803); 
+}
+
 #italy {
     margin: 10px;
     text-align: center;
@@ -46,6 +53,12 @@ p {
     color: rgb(35, 30, 17);
     border-radius: 8px;
     background: url(../images/italy_flag.png);
+}
+
+.itl {
+    margin: 10px;
+    border-radius: 5px;
+    background-color: rgba(235, 243, 243, 0.803);
 }
 
 #england {
@@ -59,6 +72,12 @@ p {
     background: url(../images/uk_flag.jpg);
 }
 
+.eng {
+    margin: 10px;
+    border-radius: 5px;
+    background-color: rgba(235, 243, 243, 0.803);
+}
+
 #australia {
     margin: 10px;
     text-align: center;
@@ -69,4 +88,15 @@ p {
     margin-left: 45px;
     border-radius: 8px;
     background: url(../images/australia_flag.jpg);
+}
+
+.austr {
+    margin: 10px;
+    border-radius: 5px;
+    background-color: rgba(235, 243, 243, 0.803);
+}
+
+.score {
+    text-align: center;
+    font-size: 30px;
 }
