@@ -16,9 +16,14 @@ h1 {
     font-size: 20px;
     width: 200px;
     height: 150px;
-    color: rgb(224, 165, 17);
+    color: rgb(35, 30, 17);
     border-radius: 8px;
     background: url(../images/germany_flag.png);
+}
+
+p {
+    margin: 10px;
+    background-color: rgba(235, 243, 243, 0.803);
 }
 
 #france {
@@ -27,7 +32,7 @@ h1 {
     font-size: 20px;
     width: 200px;
     height: 150px;
-    color: rgb(224, 165, 17);
+    color: rgb(35, 30, 17);
     border-radius: 8px;
     background: url(../images/france_flag.png);
 }
@@ -38,7 +43,7 @@ h1 {
     font-size: 20px;
     width: 200px;
     height: 150px;
-    color: rgb(224, 165, 17);
+    color: rgb(35, 30, 17);
     border-radius: 8px;
     background: url(../images/italy_flag.png);
 }
@@ -49,7 +54,7 @@ h1 {
     font-size: 20px;
     width: 200px;
     height: 150px;
-    color: rgb(255, 184, 3);
+    color: rgb(35, 30, 17);
     border-radius: 8px;
     background: url(../images/uk_flag.jpg);
 }
@@ -60,7 +65,7 @@ h1 {
     font-size: 20px;
     width: 200px;
     height: 150px;
-    color: rgb(255, 184, 3);
+    color: rgb(35, 30, 17);
     margin-left: 45px;
     border-radius: 8px;
     background: url(../images/australia_flag.jpg);
