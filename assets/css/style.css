@@ -10,6 +10,10 @@ h1 {
     justify-content: space-around;
 }
 
+#submit_button {
+    text-align: center;
+}
+
 #germany {
     margin: 10px;
     text-align: center;
