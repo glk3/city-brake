@@ -18,7 +18,6 @@ document.addEventListener("DOMContentLoaded", function() {
     // Add event listeners to each button
     buttons.forEach(button => {
         button.addEventListener('click', function() {
-            // Get the parent div id to identify the country
             const parentDiv = this.parentElement;
             const countryId = parentDiv.id;
             const inputField = parentDiv.querySelector('input[type=text]');
@@ -28,3 +27,38 @@ document.addEventListener("DOMContentLoaded", function() {
             checkAnswer(countryId, userAnswer);
         });
     });
+
+    function checkAnswer(country, userAnswer) {
+        // Get the correct answer
+        const correctAnswer = quizQuestions[country];
+
+        if (userAnswer === correctAnswer) {
+            // Correct answer
+            correctAnswers++;
+            document.getElementById('score').textContent = correctAnswers;
+            displayFeedback(country, userAnswer, true);
+        } else {
+            // Incorrect answer
+            incorrectAnswers++;
+            document.getElementById('incorrect').textContent = incorrectAnswers;
+            displayFeedback(country, userAnswer, false, correctAnswer);
+        }
+
+        // Disable input and button
+        disableInput(country);
+    }
+
+    function displayFeedback(country, userAnswer, isCorrect, correctAnswer = '') {
+        const feedbackDiv = document.getElementById(country);
+        const feedbackMsg = document.createElement('p');
+        feedbackMsg.textContent = `Your answer "${userAnswer}" is ${isCorrect ? 'correct' : `incorrect. The correct answer is "${correctAnswer}".`}`;
+        feedbackDiv.appendChild(feedbackMsg);
+    }
+
+    function disableInput(country) {
+        const inputField = document.querySelector(`#${country} input[type=text]`);
+        const submitButton = document.querySelector(`#${country} button`);
+        inputField.disabled = true;
+        submitButton.disabled = true;
+    }
+});
