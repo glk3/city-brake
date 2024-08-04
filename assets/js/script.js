@@ -49,10 +49,11 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function displayFeedback(country, userAnswer, isCorrect, correctAnswer = '') {
-        const feedbackDiv = document.getElementById(country);
-        const feedbackMsg = document.createElement('p');
-        feedbackMsg.textContent = `Your answer "${userAnswer}" is ${isCorrect ? 'correct' : `incorrect. The correct answer is "${correctAnswer}".`}`;
-        feedbackDiv.appendChild(feedbackMsg);
+        // Construct the feedback message
+        const feedbackMsg = `Your answer "${userAnswer}" is ${isCorrect ? 'correct' : `incorrect. The correct answer is "${correctAnswer}".`}`;
+    
+        // Display the feedback message in an alert window
+        alert(feedbackMsg);
     }
 
     function disableInput(country) {
