@@ -22,7 +22,7 @@ h1 {
     background-color: #ccc9c9;
 }
 
-.reset-btn {
+#resetButton {
     text-align: center;
     border-radius: 6px;
     width: 100px;
