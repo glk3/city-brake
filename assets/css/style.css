@@ -15,11 +15,6 @@ h1 {
 
 .submit-btn {
     text-align: center;
-    border-radius: 6px;
-    width: 80px;
-    height: 29px;
-    margin: 5px;
-    background-color: #ccc9c9;
 }
 
 #resetButton {
@@ -33,6 +28,19 @@ h1 {
 .reset-container {
     text-align: center;
     margin-top: 20px;
+}
+
+.high-scr-btn {
+    text-align: center;
+}
+
+#highScore {
+    text-align: center;
+    border-radius: 6px;
+    font-size: 25px;
+    width: 180px;
+    height: 50px;
+    background-color: #ccc9c9;
 }
 
 
