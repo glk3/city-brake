@@ -30,16 +30,18 @@ h1 {
     margin-top: 20px;
 }
 
-.high-scr-btn {
+.view-highscores {
     text-align: center;
 }
 
-#highScore {
+.btn {
     text-align: center;
+    text-decoration: none;
     border-radius: 6px;
-    font-size: 25px;
+    font-size: 15px;
     width: 180px;
     height: 50px;
+    color: black;
     background-color: #ccc9c9;
 }
 
