@@ -1,36 +1,39 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const highScoresTable = document.getElementById('highscores');
-    const unlockMessage = document.getElementById('unlock');
+document.addEventListener("DOMContentLoaded", () => {
+    // Get the high scores table body
+    const highScoresTable = document.getElementById("highscores").querySelector('tbody');
 
-    // Retrieve high scores from local storage
-    const highScores = JSON.parse(localStorage.getItem('highScores')) || [];
+    // Retrieve high scores from localStorage, or initialize an empty array if not present
+    const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 
-    // If there are no high scores, display the unlock message
+    // Check if there are any high scores to display
     if (highScores.length === 0) {
-        unlockMessage.style.display = 'block';
-        highScoresTable.style.display = 'none';
+        // If no scores, display a message
+        const noScoresRow = document.createElement("tr");
+        const noScoresCell = document.createElement("td");
+        noScoresCell.textContent = "No high scores yet. Play the quiz to set a high score!";
+        noScoresCell.colSpan = 2; // Span across both columns
+        noScoresRow.appendChild(noScoresCell);
+        highScoresTable.appendChild(noScoresRow);
     } else {
-        unlockMessage.style.display = 'none';
-        highScoresTable.style.display = 'table';
+        // If there are scores, sort them in descending order
+        highScores.sort((a, b) => b.score - a.score);
 
-        // Create the table header
-        highScoresTable.innerHTML = `
-            <tr>
-                <th>Rank</th>
-                <th>Name</th>
-                <th>Score</th>
-            </tr>
-        `;
-
-        // Populate the table with high scores
+        // Loop through highScores and create table rows for each
         highScores.forEach((score, index) => {
-            const row = document.createElement('tr');
-            row.innerHTML = `
-                <td>${index + 1}</td>
-                <td>${score.name}</td>
-                <td>${score.score}</td>
-            `;
-            highScoresTable.appendChild(row);
+            const scoreRow = document.createElement("tr");
+
+            // Create and append the user's name cell
+            const nameCell = document.createElement("td");
+            nameCell.textContent = `${index + 1}. ${score.name}`;
+            scoreRow.appendChild(nameCell);
+
+            // Create and append the user's score cell
+            const scoreCell = document.createElement("td");
+            scoreCell.textContent = score.score;
+            scoreRow.appendChild(scoreCell);
+
+            // Append the row to the table
+            highScoresTable.appendChild(scoreRow);
         });
     }
 });
