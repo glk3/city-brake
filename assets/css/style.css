@@ -175,7 +175,7 @@ footer {
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 40%;
+    width: 50%;
     font-size: 20px;
     text-align: center;
 }
@@ -198,7 +198,7 @@ footer {
 /* Works on screen size 320px and up */
 @media screen and (max-width: 320px) {
     .modal-content {
-        width: 90%;
+        width: 50%;
         margin: 10% auto;
         padding: 10px;
     }

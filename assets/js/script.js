@@ -91,4 +91,26 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener('resize', () => {
         console.log(`Window size: ${window.innerWidth} x ${window.innerHeight}`);
     });
+
+    // Reset function
+    function resetQuiz() {
+        correctAnswers = 0;
+        incorrectAnswers = 0;
+        document.getElementById('score').textContent = correctAnswers;
+        document.getElementById('incorrect').textContent = incorrectAnswers;
+
+        // Reset all input fields and buttons
+        document.querySelectorAll('.flex div').forEach(div => {
+            const inputField = div.querySelector('input[type=text]');
+            const submitButton = div.querySelector('button');
+            if (inputField && submitButton) {
+                inputField.disabled = false;
+                inputField.value = '';
+                submitButton.disabled = false;
+            }
+        });
+    }
+
+    // Attach reset function to reset button
+    document.getElementById('resetButton').addEventListener('click', resetQuiz);
 });
