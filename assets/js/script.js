@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const quizQuestions = {
         germany: 'berlin',
         france: 'paris',
@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const modalHTML = `
         <div id="feedbackModal" class="modal">
             <div class="modal-content">
-                <span class="close">&times;</span>
                 <p id="feedbackText"></p>
             </div>
         </div>
@@ -21,12 +20,11 @@ document.addEventListener("DOMContentLoaded", function() {
     document.body.insertAdjacentHTML('beforeend', modalHTML);
 
     const modal = document.getElementById('feedbackModal');
-    const span = document.querySelector('.close');
     const feedbackText = document.getElementById('feedbackText');
 
     const inputFields = document.querySelectorAll('input[type=text]');
     inputFields.forEach(inputField => {
-        inputField.addEventListener('keydown', function(event) {
+        inputField.addEventListener('keydown', function (event) {
             if (event.key === 'Enter') {
                 event.preventDefault();
                 const parentDiv = this.parentElement;
@@ -58,13 +56,16 @@ document.addEventListener("DOMContentLoaded", function() {
     const displayFeedback = (message) => {
         feedbackText.textContent = message;
         modal.style.display = "block";
+
+        // Automatically hide the modal after displaying the message
+        setTimeout(() => {
+            modal.style.display = "none";
+        }, 3000); // Adjust the time (3000ms = 3 seconds) if needed
     };
 
     function disableInput(country) {
         const inputField = document.querySelector(`#${country} input[type=text]`);
-        const submitButton = document.querySelector(`#${country} button`);
         inputField.disabled = true;
-        submitButton.disabled = true;
     }
 
     const displayFinalMessage = () => {
@@ -72,16 +73,6 @@ document.addEventListener("DOMContentLoaded", function() {
             displayFeedback("Congratulations! You got all answers correct!");
         } else {
             displayFeedback("You need to visit the library.");
-        }
-    };
-
-    span.onclick = function() {
-        modal.style.display = "none";
-    };
-
-    window.onclick = function(event) {
-        if (event.target === modal) {
-            modal.style.display = "none";
         }
     };
 });
