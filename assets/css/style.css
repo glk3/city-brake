@@ -75,6 +75,11 @@ footer {
     font-size: 20px;
 }
 
+tbody {
+    margin: 0;
+    box-sizing: border-box;
+}
+
 /* quiz questions */
 #germany {
     margin: 10px;
@@ -164,4 +169,25 @@ footer {
 .score {
     text-align: center;
     font-size: 30px;
+}
+
+/* Media query: Tablets and larger (320 and more) */
+@media screen and (min-width: 320px) {
+    #highscores {
+        margin-left: 345px;
+    }
+}
+
+/* Media query: Tablets and larger (400 and more) */
+@media screen and (min-width: 400px) {
+    #highscores {
+        margin-left: 345px;
+    }
+}
+
+/* Media query: Tablets and larger (1440 and more) */
+@media screen and (min-width: 1440px) {
+    #highscores {
+        margin-left: 345px;
+    }
 }
