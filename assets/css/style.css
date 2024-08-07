@@ -152,7 +152,7 @@ footer {
 
 .score {
     text-align: center;
-    font-size: 30px;
+    font-size: 25px
 }
 
 /* Modal container */
@@ -175,8 +175,9 @@ footer {
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
-    max-width: 500px;
+    width: 40%;
+    font-size: 20px;
+    text-align: center;
 }
 
 /* Close button */

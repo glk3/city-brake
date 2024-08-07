@@ -10,30 +10,34 @@ document.addEventListener("DOMContentLoaded", function () {
     let correctAnswers = 0;
     let incorrectAnswers = 0;
 
-    const modalHTML = `
-        <div id="feedbackModal" class="modal">
-            <div class="modal-content">
-                <p id="feedbackText"></p>
-            </div>
-        </div>
-    `;
-    document.body.insertAdjacentHTML('beforeend', modalHTML);
-
     const modal = document.getElementById('feedbackModal');
     const feedbackText = document.getElementById('feedbackText');
 
+    // Handle Enter key press
     const inputFields = document.querySelectorAll('input[type=text]');
     inputFields.forEach(inputField => {
         inputField.addEventListener('keydown', function (event) {
             if (event.key === 'Enter') {
                 event.preventDefault();
-                const parentDiv = this.parentElement;
-                const countryId = parentDiv.id;
-                const userAnswer = this.value.trim().toLowerCase();
-                checkAnswer(countryId, userAnswer);
+                handleSubmission(this);
             }
         });
     });
+
+    // Handle Submit button clicks
+    const submitButtons = document.querySelectorAll('button');
+    submitButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            handleSubmission(this.previousElementSibling);
+        });
+    });
+
+    function handleSubmission(inputField) {
+        const parentDiv = inputField.parentElement;
+        const countryId = parentDiv.id;
+        const userAnswer = inputField.value.trim().toLowerCase();
+        checkAnswer(countryId, userAnswer);
+    }
 
     function checkAnswer(country, userAnswer) {
         const correctAnswer = quizQuestions[country];
@@ -48,6 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         disableInput(country);
 
+        // Check if all questions have been answered
         if (correctAnswers + incorrectAnswers === Object.keys(quizQuestions).length) {
             displayFinalMessage();
         }
@@ -65,7 +70,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function disableInput(country) {
         const inputField = document.querySelector(`#${country} input[type=text]`);
+        const submitButton = document.querySelector(`#${country} button`);
         inputField.disabled = true;
+        submitButton.disabled = true;
     }
 
     const displayFinalMessage = () => {
@@ -75,4 +82,13 @@ document.addEventListener("DOMContentLoaded", function () {
             displayFeedback("You need to visit the library.");
         }
     };
+
+    // Debugging for Mobile
+    modal.addEventListener('click', () => {
+        console.log('Modal clicked');
+    });
+
+    window.addEventListener('resize', () => {
+        console.log(`Window size: ${window.innerWidth} x ${window.innerHeight}`);
+    });
 });
