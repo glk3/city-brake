@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Automatically hide the modal after displaying the message
         setTimeout(() => {
             modal.style.display = "none";
-        }, 3000); // Adjust the time (3000ms = 3 seconds) if needed
+        }, 2000); // Adjust the time (2000ms = 2 seconds) if needed
     };
 
     function disableInput(country) {
