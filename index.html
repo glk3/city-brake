@@ -12,7 +12,7 @@
     <h1>Welcome to City Quiz!</h1>
     <div class="flex">
     <div id="germany">
-        <div class="ger">
+        <div class="ger" name="text">
         <p>What is the capital city of Germany?</p>
         </div>
         <input type="text">
@@ -22,39 +22,44 @@
         <div class="fr">
         <p>What is the capital city of France?</p>
         </div>
-        <input type="text">
+        <input type="text" name="text">
         <button class="submit-btn">Submit</button>
     </div>
     <div id="italy">
         <div class="itl">
         <p>What is the capital city of Italy?</p>
         </div>
-        <input type="text">
+        <input type="text" name="text">
         <button class="submit-btn">Submit</button>
     </div>
     <div id="england">
         <div class="eng">
         <p>What is the capital city of England?</p>
         </div>
-        <input type="text">
+        <input type="text" name="text">
         <button class="submit-btn">Submit</button>
     </div>
     <div id="australia">
         <div class="austr">
         <p>What is the capital city Australia?</p>
         </div>
-        <input type="text">
+        <input type="text" name="text">
         <button class="submit-btn">Submit</button>
     </div>
+    </div>
+
+    <!-- The Modal -->
+    <div id="feedbackModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p id="feedbackText"></p>
+        </div>
     </div>
         <div class="score">
             <p class="scores">Correct Answers <span id="score">0</span></p>
             <p class="scores">Incorrect Answers <span id="incorrect">0</span></p>
         </div>
-        <!-- High score -->
-            <div class="view-highscores">
-                <a href="highscore.html" class="btn">High Scores</a>
-            </div>
+        
         <!-- Reset button -->
         <div class="reset-container">
             <button id="resetButton">Reset Quiz</button>

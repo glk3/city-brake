@@ -12,75 +12,95 @@ document.addEventListener("DOMContentLoaded", function() {
     let correctAnswers = 0;
     let incorrectAnswers = 0;
 
-    // Get all submit buttons
-    const buttons = document.querySelectorAll('button');
+    // Create the modal structure dynamically
+    const modalHTML = `
+        <div id="feedbackModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p id="feedbackText"></p>
+            </div>
+        </div>
+    `;
+    document.body.insertAdjacentHTML('beforeend', modalHTML);
 
-    // Add event listeners to each button
-    buttons.forEach(button => {
-        button.addEventListener('click', function() {
-            const parentDiv = this.parentElement;
-            const countryId = parentDiv.id;
-            const inputField = parentDiv.querySelector('input[type=text]');
-            const userAnswer = inputField.value.trim().toLowerCase();
+    // Get the modal and close button
+    const modal = document.getElementById('feedbackModal');
+    const span = document.querySelector('.close');
+    const feedbackText = document.getElementById('feedbackText');
 
-            // Check the answer
-            checkAnswer(countryId, userAnswer);
+    // Get all input fields
+    const inputFields = document.querySelectorAll('input[type=text]');
+
+    // Add event listeners to each input field for the "Enter" key
+    inputFields.forEach(inputField => {
+        inputField.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                const parentDiv = this.parentElement;
+                const countryId = parentDiv.id;
+                const userAnswer = this.value.trim().toLowerCase();
+
+                // Check the answer
+                checkAnswer(countryId, userAnswer);
+            }
         });
     });
 
+    // Function to check the answer
     function checkAnswer(country, userAnswer) {
-        // Get the correct answer
         const correctAnswer = quizQuestions[country];
 
         if (userAnswer === correctAnswer) {
-            // Correct answer
             correctAnswers++;
             document.getElementById('score').textContent = correctAnswers;
-            displayFeedback(country, userAnswer, true);
+            displayFeedback(`Your answer "${userAnswer}" is correct!`);
         } else {
-            // Incorrect answer
             incorrectAnswers++;
             document.getElementById('incorrect').textContent = incorrectAnswers;
-            displayFeedback(country, userAnswer, false, correctAnswer);
+            displayFeedback(`Your answer "${userAnswer}" is incorrect. The correct answer is "${correctAnswer}".`);
         }
 
         // Disable input and button
         disableInput(country);
+
+        // Check if the quiz is completed
+        if (correctAnswers + incorrectAnswers === Object.keys(quizQuestions).length) {
+            displayFinalMessage();
+        }
     }
 
-    function displayFeedback(country, userAnswer, isCorrect, correctAnswer = '') {
-        // Construct the feedback message
-        const feedbackMsg = `Your answer "${userAnswer}" is ${isCorrect ? 'correct' : `incorrect. The correct answer is "${correctAnswer}".`}`;
-    
-        // Display the feedback message in an alert window
-        alert(feedbackMsg);
-    }
+    // Function to display feedback in the modal
+    const displayFeedback = (message) => {
+        feedbackText.textContent = message;
+        modal.style.display = "block";
+    };
 
+    // Function to disable input and button
     function disableInput(country) {
         const inputField = document.querySelector(`#${country} input[type=text]`);
         const submitButton = document.querySelector(`#${country} button`);
         inputField.disabled = true;
         submitButton.disabled = true;
     }
-    // Reset function
-    function resetQuiz() {
-        correctAnswers = 0;
-        incorrectAnswers = 0;
-        document.getElementById('score').textContent = correctAnswers;
-        document.getElementById('incorrect').textContent = incorrectAnswers;
 
-        // Reset all input fields and buttons
-        document.querySelectorAll('.flex div').forEach(div => {
-            const inputField = div.querySelector('input[type=text]');
-            const submitButton = div.querySelector('button');
-            if (inputField && submitButton) {
-                inputField.disabled = false;
-                inputField.value = '';
-                submitButton.disabled = false;
-            }
-        });
-    }
+    // Function to display final message based on score
+    const displayFinalMessage = () => {
+        if (correctAnswers === 5) {
+            displayFeedback("Congratulations! You got all answers correct!");
+        } else {
+            displayFeedback("You need to visit the library.");
+        }
+    };
 
-    // Attach reset function to reset button
-    document.getElementById('resetButton').addEventListener('click', resetQuiz);
+    // Close the modal when the user clicks on <span> (x)
+    span.onclick = function() {
+        modal.style.display = "none";
+    };
+
+    // Close the modal when the user clicks anywhere outside of the modal
+    window.onclick = function(event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    };
 });
