@@ -132,3 +132,17 @@ The W3C Markup Validator, W3C CSS Validator and JSHint, a JavaScript Code Qualit
 
 - - -
 
+## Content
+ * All code was writen by my self.
+ * Bakground image and flags pictures was taken from free resources on google search.
+
+- - -
+
+## Aknowlagement
+
+ * Learned JavaScript from code institute material provided.
+ * MDN Web Docs
+ * Free videos on youtube.
+ * Mentor Mitko provided with helpful advices
+ * Tutor Kamil-ci provided with usfull links and motivation don't  give up.
+
