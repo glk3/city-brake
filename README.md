@@ -85,3 +85,50 @@ City Quiz the game allows the player to test his/her geographical knowledge, spe
     * Mockup picture for the README file.
 
 - - -
+
+## Testing
+
+The W3C Markup Validator, W3C CSS Validator and JSHint, a JavaScript Code Quality Tool were used to validate every html, css, and js file to ensure there were no errors.
+
+## Validation Result
+  * No errors was found.
+
+* [W3C Markup Validator](https://validator.w3.org/)
+  * ![Markup Validator](/assets/images/html_validator.png)
+* [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
+  * ![CSS Validator](/assets/images/w3c_css.png)
+* [JSHint](https://jshint.com/)
+  * ![jshINT](/assets/images/jsHint.png)
+
+- - -
+
+### Manual Testing 
+
+* The quiz was tested on Google Chrome, Microsoft Edge, and Opera browsers.
+* The quiz was viewed on a desktop computer, laptop, tablet, mobile phones, such as Samsung Galaxy A52,iPhone xs,iPhone se
+* Family members and friends were asked to play the quiz and give feedback.
+* Dev Tools was used to test how the site looks on various screen sizes.
+
+- - -
+
+### Lighthouse test
+  * Mobile version results
+   * ![lighthouse mobile](/assets/images/lighthous_mobile.png)
+
+  * Desktop version results
+   * ![lighthouse desktop](/assets/images/lighthouse_pc.png)
+
+- - -
+
+### Deployment
+
+* Steps to deply are:
+* Locate repository (glk3/Gediminas-Luksevicius-Xshape-GYM) in Github.
+* Open repository and select "settings" on menue.
+* On left handside in "General" menue on "Code and automation"section go to option "Pages".
+* Under "Branch", click the dropdown menu "None" and select "Main" and click "Save".
+* Scroll down the page and check on the right hand side for "Deployments".
+* Click on "Deployments" to see your new website link.
+
+- - -
+

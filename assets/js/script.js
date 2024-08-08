@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     };
 
-    // Debugging for Mobile
+    // For Mobile
     modal.addEventListener('click', () => {
         console.log('Modal clicked');
     });
