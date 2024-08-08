@@ -15,7 +15,7 @@ City Quiz the game allows the player to test his/her geographical knowledge, spe
   * High Scores table that displays high scores after every question is answered.
   * Feedback message with congradulaions or wright answer is displayed after every answer. 
   * Optimized design for different devices like ,mobile phones,tablets,laptops,pc.
-
+  - - -
 ### Existing Features
 * City Quiz Heaading
   * It is displayed at the top of the page, ensuring that users can easy and quickley identify the game.The game's name is displayed in a clear and visible manner.
@@ -28,3 +28,60 @@ City Quiz the game allows the player to test his/her geographical knowledge, spe
   * Reset button
 
 ![Quiz page](/assets/images/quiz_page.png)
+
+* Feedback message
+  * After each guess, the player receives feedback message.Depending if guessing was wright or wrong he/she receives the corresponding message.
+
+![Feedback message](/assets/images/fedback_message.png)
+
+* Score counter
+  * Score counter just show to the user how many question he/she got wright or wrong.
+
+![Score counter](/assets/images/score_tabel.png)
+
+* Reset button
+  * Resets quiz to start all over again.
+
+![Reset button](/assets/images/quiz_reset_button.png)
+
+* Footer
+  * Contains developer name
+
+## Features That could be  Implemented later
+
+  * Additional questions.
+  * User name.
+  * High score counter.
+  * Shuffeld question.
+  * Timer qounting how quick answer was submited.
+  * Additional quiz types:
+  * The quiz interface can include a sound and animation effects like fireworks and etc.
+- - -
+## Design
+* Colors used in this project: ![Colors](/assets/images/colors.png)
+  * Some colors were selected randomly.
+* Wireframes
+  * Pen and paper.
+
+- - -
+
+## Technologies Used
+
+* [HTML5](https://en.wikipedia.org/wiki/HTML5)
+* [CSS3](https://en.wikipedia.org/wiki/CSS)
+* [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
+
+- - -
+
+## Frameworks, Libraries & Programs Used
+
+* [Gitpod](https://www.gitpod.io/)
+    * To write the code.
+* [Github](https://github.com/)
+    * Deployment of the website and storing the files online.
+* [Google Fonts](https://fonts.google.com/)
+    * Import main font the website.
+* [Am I Responsive](https://ui.dev/amiresponsive)
+    * Mockup picture for the README file.
+
+- - -

@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (correctAnswers === 5) {
             displayFeedback("Congratulations! You got all answers correct!");
         } else {
-            displayFeedback("You need to visit the library.");
+            displayFeedback("You need to improve your knowlage.");
         }
     };
 
